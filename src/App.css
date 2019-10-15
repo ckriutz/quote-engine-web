@@ -1,0 +1,30 @@
+.App-header {
+  background-color: #282c34;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header-base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.QuoteStyle {
+  color: green;
+}
+
+.App-form {
+  padding-top: 5vh;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #563d7c;
+  color: white;
+}
