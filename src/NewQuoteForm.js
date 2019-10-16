@@ -23,7 +23,7 @@ function NewQuoteForm(props) {
             <form>
                 <div class="form-row">
                     <div class="col-5">
-                        <input name="quote" type="text" class="form-control" placeholder="Quote" onChange={handleChange} />
+                        <input name="text" type="text" class="form-control" placeholder="Quote" onChange={handleChange} />
                     </div>
                     <div class="col-4">
                         <input name="author" type="text" class="form-control" placeholder="Author" onChange={handleChange} />

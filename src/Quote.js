@@ -1,16 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Title = styled.h1`align-items: left;`;
+//const Title = styled.h1`align-items: left;`;
 
 function Quote(props) {
-    //const [quote, setQuote] = useState(props);
+    if(!props.text) {
+        // We olny really get here if we don't have a quote to work with.
+        console.log("No Quotes. :(");
+        return (<div></div>)
+    }
     return(
-        <blockquote>
-            <Title>The quote!</Title>
-            <p className="mb-0">{props.quote}</p>
-            <footer className="blockquote footer">{props.author}</footer>
-        </blockquote>
+        <div className="container QuoteBox">
+            <div class="d-flex flex-row">
+            <div class="p-2"><i class="fas fa-quote-left fa-4x"></i></div>
+            <div class="p-2">
+                <p className="mb-0 h4">{props.text}</p>
+                <p class="text-muted">- {props.author}</p></div>
+            </div>
+        </div>
     );
 }
 
