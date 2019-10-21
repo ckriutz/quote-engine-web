@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Quote from './Quote.js';
-//import logo from './logo.svg';
+import Quote from './components/app/Quote.js';
+import NewQuoteForm from './components/app/NewQuoteForm.js';
 import './App.css';
-import NewQuoteForm from './NewQuoteForm.js';
+
 
 function App() {
   const quoteAPIURL = "http://127.0.0.1:8080/quote";
@@ -10,6 +10,16 @@ function App() {
 
   const newQuoteCallback = (newQuote) => { 
     setQuote(newQuote);
+
+    // also, need to try to write to database.
+    async function writeQuoteToAPI(data) {
+      // Should probably do something depending on if this fails or something.
+      await fetch(quoteAPIURL, {
+        method: 'POST',
+        body: JSON.stringify(data)
+      });
+    };
+    writeQuoteToAPI(newQuote);
   };
   
 
