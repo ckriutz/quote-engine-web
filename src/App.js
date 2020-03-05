@@ -31,7 +31,7 @@ function App() {
         </header>
       </div>
       <div className="footer">
-        <p>Copyright 2000 - Casey Kriutzfield</p>
+        <p>© 2020 - Casey Kriutzfield</p>
         <p><a href="https://github.com/ckriutz/quote-engine-web">Github Project</a></p>
       </div>
   </main>

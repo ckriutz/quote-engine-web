@@ -1,11 +1,7 @@
 import React from 'react';
 
-//const Title = styled.h1`align-items: left;`;
-
 function Quote(props) {
     if(!props.text) {
-        // We olny really get here if we don't have a quote to work with.
-        console.log("No Quotes. :(");
         return (<div></div>)
     }
     return(
