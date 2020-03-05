@@ -1,27 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Quote from './components/app/Quote.js';
-import NewQuoteForm from './components/app/NewQuoteForm.js';
 import './App.css';
 
 
 function App() {
-  const quoteAPIURL = "http://127.0.0.1:8080/quote";
+  const quoteAPIURL = "https://rfsu7xxtig.execute-api.us-east-2.amazonaws.com/default/getQuote";
   const [quote, setQuote] = useState();
-
-  const newQuoteCallback = (newQuote) => { 
-    setQuote(newQuote);
-
-    // also, need to try to write to database.
-    async function writeQuoteToAPI(data) {
-      // Should probably do something depending on if this fails or something.
-      await fetch(quoteAPIURL, {
-        method: 'POST',
-        body: JSON.stringify(data)
-      });
-    };
-    writeQuoteToAPI(newQuote);
-  };
-  
 
   useEffect(() => {
     async function getQuoteFromAPI() {
@@ -33,19 +17,24 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <header className="App-header">
-        <div className="App-header-base">
-          <h2>Casey's Random Quote Generator!</h2>
-          <p>There are not a lot quotes in the database, so don't get excited.</p>
+    <main>
+      <div>
+        <header className="App-header">
+          <div className="App-header-base">
+            <h2>Casey's Random Quote Generator!</h2>
+            <p>There are not a lot of quotes in the database, so don't get excited.</p>
 
-          <DatabaseWarningBanner warn={quote == null} />
-        </div>
+            <DatabaseWarningBanner warn={quote == null} />
+          </div>
 
-        <Quote {...quote}></Quote>
-      </header>
-      <NewQuoteForm callback = {newQuoteCallback} />
-    </div>
+          <Quote {...quote}></Quote>
+        </header>
+      </div>
+      <div className="footer">
+        <p>Copyright 2000 - Casey Kriutzfield</p>
+        <p><a href="https://github.com/ckriutz/quote-engine-web">Github Project</a></p>
+      </div>
+  </main>
   );
 }
 

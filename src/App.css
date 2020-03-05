@@ -1,3 +1,7 @@
+.body {
+  background-color: #282c34;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 60vh;
@@ -28,4 +32,12 @@
   flex-direction: column;
   background-color: #563d7c;
   color: white;
+}
+
+.footer {
+  padding-top: 5vh;
+  background-color: #563d7c;
+  min-height: 50vh;
+  color: white;
+  text-align: center;
 }
